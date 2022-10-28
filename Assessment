@@ -1,0 +1,53 @@
+package com.fortech;
+
+
+public class Main {
+    public void fizzBuzz(int number) {
+
+        for (int i = 1; i <= 100; i++) {      //here we have a for loop that will go from 1 to 100.//
+            number = i;
+            if (i % 5 == 0 && i % 3 == 0) {            //from here the if's begin. we have 3 possible outcomes,
+                System.out.println(" FizzBuzz");       // it will say fizzBuzz,Buzz or Fizz.In order to have that we
+            } else if (i % 5 == 0) {                   // have to put 3 conditions. 1 where the number will be divisible
+                System.out.println(" Buzz ");          // with 5 and 3, sec one 5 and last one is 3.
+            } else if (i % 3 == 0) {                   // We have to start from the biggest and end with the smallest,
+                System.out.println(" Fizz ");          //in order to get the number go through all possible outcomes till 
+            } else {                                   // we find the good one.
+                System.out.println(i);
+            }
+        }
+
+    }
+
+    public void printPrimeNumberInRange(int n1, int n2) {
+        for (int i = n1; i <= n2; i++) {    //here we have a for loop that starts from the first number n1  that we will
+            boolean prime = true;           // choose later and ends at n2.
+            int a = 2;
+            while (a <= i / 2) {            //The while loop searches from a=2 to the half of the number i
+                                          //The if statement checks if the number i is divisible by the number a.
+                if (i % a == 0) {          //  If it is, then i is not prime and the loop breaks and moves to the next
+                    prime = false;         //number.
+                    break;              // If  the numbers are not divisible, then we print number i
+                }
+                a++;
+
+            }
+
+            if (prime) {
+                System.out.println(i);
+            }
+        }
+
+
+    }
+
+    public static void main(String[] args) {
+        Main fb = new Main();  
+        System.out.println("FizzBuzz:");
+        fb.fizzBuzz(100);
+        System.out.println("printPrimeNumberInRange:");
+        fb.printPrimeNumberInRange(10, 15);
+    }
+
+
+}
